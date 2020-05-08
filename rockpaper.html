@@ -1,69 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors </title>
+</head>
+
 <body>
 
-    <button onclick="myFunction()">rock paper scissors</button>
+    <section class="Game">
+        <div class="score">
+            <div class="player-score">
+                <h2>Player</h2>
+                <p>0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p>0</p>
+            </div>
+        </div>
 
-    <p id="demo"></p>
-    
-    <script>
 
-    
-    console.log("hello, type rock, paper, or scissors");
+        <div class="intro">
+            <h1>rock paper scissors</h1>
+            <button onclick="game()">play</button>
 
-    
-    function playRound(a,b )
-    {
-       console.log(a);
-       console.log(b);
-       if(a==b){
-           window.alert("tie");
-       }
-        else if(a == 'scissor' && b == 'paper'){
-            window.alert("win win");
-        }
-        else if(a == 'rock' && b == 'scissor'){
-            window.alert("win");
-        }
-        else if(a == 'paper' && b == 'rock'){
-            window.alert("win");
-        }
-        else
-            window.alert("LOSER"); 
+        </div>
 
-    }
+        <div class="match">
+            <h2 class="winner">choose your hand</h2>
+            <div class="hands">
+                <img class="player-hand" src="./assets/hand.png" width=125 height=185 alt="">
+                <img class="computer-hand" src="./assets/hand.png" width=125 height=185 alt="">
+            </div>
+            <div class="selection">
+                <button onclick="game()">rock</button>
+                <button onclick="game()">paper</button>
+                <button onclick="game()">scissors</button>
+            </div>
+        </div>
 
-    function playerSelection(){
-        var a = prompt("PLEASE CHOICE NOW" , "rock, paper, scissors");
-
-        return a;
-    }
-    
-    
-    function compSelection(){
-    const choice=["rock", "paper", "scissor"];
-    var cpuchoice = Math.floor(Math.random() * 3);
-    return choice[cpuchoice];
-    }
-
-    function game(){
-        for(i=0; i<5; i++){
-            var x = playerSelection();
-            var y = compSelection();
-            playRound(x,y);
-        }
-
-        if(confirm("Would you like another round?")){
-            game();
-        }
-        else{
-            window.alert("have a nice day!");
-        }
-
-    }
-    
-    game();
-    
-    </script>
+    </section>
+    <script src="app.js"></script>
 </body>
+
 </html>
