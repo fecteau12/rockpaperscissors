@@ -12,33 +12,33 @@
 
     <section class="Game">
         <div class="score">
-            <div class="player-score">
+            <div >
                 <h2>Player</h2>
-                <p>0</p>
+                <p id="player-score">0</p>
             </div>
-            <div class="computer-score">
+            <div >
                 <h2>Computer</h2>
-                <p>0</p>
+                <p id="computer-score">0</p>
             </div>
         </div>
 
 
         <div class="intro">
             <h1>rock paper scissors</h1>
-            <button onclick="game()">play</button>
+            <button>play</button>
 
         </div>
 
-        <div class="match">
+        <div class="match fadeOut">
             <h2 class="winner">choose your hand</h2>
             <div class="hands">
-                <img class="player-hand" src="./assets/hand.png" width=125 height=185 alt="">
-                <img class="computer-hand" src="./assets/hand.png" width=125 height=185 alt="">
+                <img class = "play-hand" id="player-hand" src="./assets/hand.png" width=125 height=185 alt="">
+                <img class ="comp-hand" id="computer-hand" src="./assets/hand.png" width=125 height=185 alt="">
             </div>
             <div class="selection">
-                <button onclick="game()">rock</button>
-                <button onclick="game()">paper</button>
-                <button onclick="game()">scissors</button>
+                <button onclick="rock()" >rock</button>
+                <button onclick="paper()">paper</button>
+                <button onclick="scissors()">scissors</button>
             </div>
         </div>
 
