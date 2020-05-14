@@ -1,11 +1,7 @@
-
-
 var cpupoints = 0;
 var playerpoints = 0;
-
 const playerHand = document.querySelector(".play-hand");
 const computerHand = document.querySelector(".comp-hand");
-
 
 function updateScore() {
     document.getElementById("player-score").innerHTML = playerpoints;
@@ -118,7 +114,4 @@ function scissors() {
 
 }
 
-
-
-//
 startbutton();
