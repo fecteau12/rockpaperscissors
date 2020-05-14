@@ -6,16 +6,14 @@ var playerpoints = 0;
 const playerHand = document.querySelector(".play-hand");
 const computerHand = document.querySelector(".comp-hand");
 
+
 function updateScore() {
     document.getElementById("player-score").innerHTML = playerpoints;
     document.getElementById("computer-score").innerHTML = cpupoints;
-
 }
 
-
+//determines the winner by comparing the hands
 function playRound(a, b) {
-
-
     if (a == b) {
         console.log("TIE " + "you chose " + a + " computer chose " + b);
     }
@@ -39,21 +37,7 @@ function playRound(a, b) {
 }
 
 
-function playerSelection() {
-    var a = prompt("PLEASE CHOICE NOW", "rock, paper, scissors");
-    if (a == "rock")
-        document.getElementById("player-hand").src = "./assets/rock.png";
-
-    if (a == "paper")
-        document.getElementById("player-hand").src = "./assets/paper.png";
-
-    if (a == "scissors")
-        document.getElementById("player-hand").src = "./assets/scissors.png";
-
-    return a;
-}
-
-
+//random generator function that returns a computer choice
 function compSelection() {
     const choice = ["rock", "paper", "scissors"];
     var cpuchoice = Math.floor(Math.random() * 3);
@@ -63,7 +47,8 @@ function compSelection() {
     return choice[cpuchoice];
 }
 
-function start() {
+//function to fade away the "play" button and reveal the hand selection menu
+function startbutton() {
     const playround = document.querySelector(".intro button");
     const introMotion = document.querySelector(".intro");
     const match = document.querySelector(".match");
@@ -74,26 +59,18 @@ function start() {
     })
 }
 
+//shakes the hand to imitate rock paper scissors
 function animation() {
-
     const options = document.querySelectorAll(".options button");
-
     playerHand.style.animation = "shakePlayer 2s ease";
     computerHand.style.animation = "shakeComputer 2s ease";
-
 }
 
+//clears the animation for the hands
 function resetHand() {
-
     playerHand.style.animation = "";
     computerHand.style.animation = "";
-
-
 }
-
-
-start();
-
 
 
 function rock() {
@@ -111,7 +88,6 @@ function rock() {
 
 }
 
-
 function paper() {
     document.getElementById("player-hand").src = "./assets/hand.png";
     document.getElementById("computer-hand").src = "./assets/hand.png";
@@ -127,8 +103,6 @@ function paper() {
 
 }
 
-
-
 function scissors() {
     document.getElementById("player-hand").src = "./assets/hand.png";
     document.getElementById("computer-hand").src = "./assets/hand.png";
@@ -143,3 +117,8 @@ function scissors() {
     }, 2000);
 
 }
+
+
+
+//
+startbutton();
